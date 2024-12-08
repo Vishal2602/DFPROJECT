@@ -1,0 +1,4 @@
+2024-11-30 10:15:30,123 user=alice event_type=login_success event_id=4624 severity=2 message="User alice logged in successfully."
+2024-11-30 10:16:45,456 user=bob event_type=failed_login event_id=4625 severity=3 message="Failed login attempt for user bob."
+2024-11-30 10:18:20,789 user=carol event_type=process_start event_id=4688 severity=1 message="Process chrome.exe started."
+2024-11-30 10:20:10,012 user=dave event_type=failed_login event_id=4625 severity=3 message="Failed login attempt for user dave."

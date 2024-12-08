@@ -1,0 +1,4 @@
+2024-11-30 10:15:30,123 source_ip=192.168.1.101 destination_ip=10.0.0.5 port=443 protocol=TCP action=Deny
+2024-11-30 10:16:45,456 source_ip=10.0.0.5 destination_ip=172.16.0.3 port=80 protocol=TCP action=Allow
+2024-11-30 10:18:20,789 source_ip=172.16.0.3 destination_ip=192.168.1.101 port=22 protocol=TCP action=Deny
+2024-11-30 10:20:10,012 source_ip=192.168.1.102 destination_ip=10.0.0.6 port=8080 protocol=TCP action=Allow

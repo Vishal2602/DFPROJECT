@@ -174,13 +174,5 @@ log-file-analysis/
 
 ---
 
-## 🤝 **Contributing**
-We welcome contributions! To contribute:
-1. **Fork the repository**.
-2. **Create a branch** for your feature.
-3. **Submit a pull request** with detailed explanations of changes made.
 
----
 
-## 📝 **License**
-This project is licensed under the **MIT License**. See `LICENSE` for more information.

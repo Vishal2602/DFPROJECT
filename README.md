@@ -13,8 +13,6 @@ A comprehensive system for analyzing **Apache, Firewall, and System logs** to de
 5. [**Project Structure**](#-project-structure)
 6. [**File Descriptions**](#-file-descriptions)
 7. [**Troubleshooting**](#-troubleshooting)
-8. [**Contributing**](#-contributing)
-9. [**License**](#-license)
 
 ---
 
@@ -74,7 +72,7 @@ pip install -r requirements.txt
 ```
 Make a 'reports' directory:
 ```bash
-cd reports
+mkdir reports
 ```
 
 ### **4️⃣ Set Up Directory Structure**
@@ -140,8 +138,8 @@ python src/reporting.py
 ```
 log-file-analysis/
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── processed/
+│   └── raw/
 ├── reports/
 ├── models/
 ├── requirements.txt

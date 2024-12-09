@@ -65,11 +65,7 @@ def generate_report():
     create_request_trends_visualization()
     pdf.add_image(request_trends_image, 'Request Trends Over Hours')
 
-    # **5. Top 10 IPs with Highest Deny Counts**
-    create_top_deny_ips_visualization()
-    pdf.add_image(top_deny_ips_image, 'Top 10 IPs with Highest Deny Counts')
-
-    # **6. Conclusion**
+    # **5. Conclusion**
     pdf.chapter_title('Conclusion')
     pdf.chapter_body('The log file analysis successfully identified multiple indicators of potential intrusions. Continued monitoring and refinement of detection mechanisms are recommended to enhance security posture.')
 
@@ -107,27 +103,6 @@ def create_request_trends_visualization():
         plt.close()
     except Exception as e:
         print(f"Error creating request trends visualization: {e}")
-
-def create_top_deny_ips_visualization():
-    """Generate a bar plot for the top 10 IPs with the highest deny counts."""
-    try:
-        df = pd.read_csv(firewall_log_file)
-        top_ips = df.groupby('source_ip')['action'].apply(lambda x: (x == 'Deny').sum()).reset_index()
-        top_ips.columns = ['ip', 'deny_count']
-        top_ips = top_ips.sort_values('deny_count', ascending=False).head(10)
-
-        plt.figure(figsize=(12, 6))
-        sns.barplot(x='ip', y='deny_count', data=top_ips, palette='Reds_d')
-        plt.title('Top 10 IPs with Highest Deny Counts')
-        plt.xlabel('IP Address')
-        plt.ylabel('Number of Denies')
-        plt.xticks(rotation=45)
-        plt.tight_layout()
-        os.makedirs('reports', exist_ok=True)
-        plt.savefig(top_deny_ips_image)
-        plt.close()
-    except Exception as e:
-        print(f"Error creating top deny IPs visualization: {e}")
 
 if __name__ == "__main__":
     generate_report()

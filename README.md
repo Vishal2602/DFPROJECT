@@ -20,8 +20,8 @@ A comprehensive system for analyzing **Apache, Firewall, and System logs** to de
 
 ## 📄 **Project Overview**
 The **Intrusion Detection System (IDS)** analyzes logs from **Apache, Firewall, and System activity** to identify abnormal patterns. It processes large log files, extracts key features, and builds a **Random Forest Classifier** to predict whether an IP is **suspicious**. The system generates:
-- **PNG visualizations** for request trends and deny counts.
-- **PDF reports** with summaries, results, and conclusions.
+- **Visualization** for request trends and deny counts.
+- **PDF report** with summaries, results, and conclusions.
 - **Suspicious log entries** for detailed review.
 
 ---
@@ -57,14 +57,14 @@ To set up the project, follow these steps:
 
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/username/IntrusionDetectionSystem.git
-cd IntrusionDetectionSystem
+git clone https://github.com/Vishal2602/DFPROJECT.git
+cd DFPROJECT
 ```
 
 ### **2️⃣ Set Up Virtual Environment**
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 ```
 
 ### **3️⃣ Install Requirements**
@@ -72,14 +72,18 @@ Install required libraries listed in `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
+Make a 'reports' directory:
+```bash
+cd reports
+```
 
 ### **4️⃣ Set Up Directory Structure**
 Ensure the following structure exists:
 ```
 log-file-analysis/
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── processed/
+│   └── raw/
 ├── reports/
 ├── models/
 └── src/
@@ -123,9 +127,8 @@ python src/reporting.py
 
 **Expected Outputs**
 - **PDF Report**: `reports/Intrusion_Detection_Report.pdf`
-- **Visualizations**: 
+- **Visualization**: 
   - `reports/request_trends.png`
-  - `reports/top_deny_ips.png`
 - **Suspicious Logs**: 
   - `reports/suspicious_apache_logs.csv`
   - `reports/suspicious_firewall_logs.csv`
@@ -147,8 +150,8 @@ log-file-analysis/
     ├── data_preprocessing.py
     ├── feature_extraction.py
     ├── intrusion_detection.py
-    ├── save_suspicious_logs.py
-    └── reporting.py
+    ├── reporting.py
+    └── save_suspicious_logs.py
 ```
 
 ---
@@ -159,8 +162,8 @@ log-file-analysis/
 | **`data_preprocessing.py`** | Processes raw Apache, Firewall, and System logs. |
 | **`feature_extraction.py`**  | Extracts key features from logs for ML training. |
 | **`intrusion_detection.py`** | Trains and evaluates a Random Forest ML model.   |
-| **`save_suspicious_logs.py`**| Filters and saves suspicious log entries.       |
 | **`reporting.py`**           | Generates a PDF report with images and insights.|
+| **`save_suspicious_logs.py`**| Filters and saves suspicious log entries.       |
 
 ---
 
@@ -168,10 +171,7 @@ log-file-analysis/
 | **Issue**           | **Cause**                    | **Solution**                              |
 |---------------------|----------------------------|------------------------------------------|
 | File not found       | Log files are missing      | Ensure `data/raw` has the required logs.  |
-| UnicodeEncodeError  | FPDF requires ASCII text   | Use `-` instead of `•` in PDF generation. |
 | Model load failed    | Missing model file         | Retrain the model using `intrusion_detection.py`. |
-| Pandas KeyError     | Missing columns in CSV     | Ensure correct headers are in logs.      |
-
 ---
 
 
